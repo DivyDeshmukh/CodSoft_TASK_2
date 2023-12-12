@@ -61,12 +61,10 @@ html , body{
 
 .home {
     display: flex;
-    /* background: url('https://avatars.githubusercontent.com/u/127101632?v=4') no-repeat;
-    background-size: cover;
-    background-position: center; */
     align-items: center;
+    justify-content: flex-end;
     height: 100vh;
-    padding: 0 10%;
+    padding: 0 15%;
 }
 
 .home-content {
@@ -270,16 +268,37 @@ html , body{
 .home-imgHover {
     position: absolute;
     top: 0;
-    right: 30px;
+    left: 20px;
     width: 500px;
     height: 100%;
     background: transparent;
     transition: 3s;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    opacity: 0.2;
 }
 
+.home-imgHover img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 .home-imgHover:hover {
     background: #081b29;
     opacity: 0.8;
+}
+
+.home-imgHover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1.5s ease forwards;
+    animation-delay: 3s;
 }
 
 @keyframes showRight {
@@ -287,3 +306,4 @@ html , body{
         width: 0;
     }
 }
+
